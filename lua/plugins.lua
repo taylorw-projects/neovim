@@ -16,6 +16,9 @@ return require 'packer'.startup(function(use)
     -- Async Runtime
     use 'nvim-lua/plenary.nvim'
 
+    -- Popup
+    use 'nvim-lua/popup.nvim'
+
 	---------------------------=== Language Server Config ===---------------------------
 	-- Baseline LSP Config
 	use { 'neovim/nvim-lspconfig', config = [[require 'config.lspconfig']] }
@@ -51,7 +54,7 @@ return require 'packer'.startup(function(use)
 
     use 'nvim-telescope/telescope-file-browser.nvim'
 
-    use { 'ahmedkhalf/project.nvim', config = [[require 'config.project']] }
+    use 'nvim-telescope/telescope-project.nvim'
 
     -- Start Menu
     use { 'goolord/alpha-nvim', config = [[require 'config.alpha']] }
@@ -61,6 +64,9 @@ return require 'packer'.startup(function(use)
 
     -- File Tree
     use { 'nvim-tree/nvim-tree.lua', config = [[require 'config.nvim_tree']] }
+
+    -- Nvim Tree Icons
+    use 'nvim-tree/nvim-web-devicons'
 
 	---------------------------===    Editor Formatting   ===---------------------------
 	use 'lukas-reineke/indent-blankline.nvim'
