@@ -1,2 +1,3 @@
-require('plugins')
-require('vimopts')
+require 'plugins'
+require 'vimopts'
+require 'keymap'

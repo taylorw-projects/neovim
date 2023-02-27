@@ -1,6 +1,6 @@
 vim.keymap.set(
     'n',
-    '<C-w>z',
+    '<space>wz',
     function()
         vim.cmd 'NoNeckPain'
     end,

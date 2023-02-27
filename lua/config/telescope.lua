@@ -4,11 +4,11 @@ local builtin = require 'telescope.builtin'
 t.setup {
     extensions = {
         project = {
-            hidden_files = true,
+            hidden_files = false,
             sync_with_nvim_tree = true,
         },
         file_browser = {
-            hidden_files = true,
+            hidden_files = false,
         },
     },
 }
@@ -40,4 +40,10 @@ vim.keymap.set('n', '<space>fz', t.extensions.zoxide.list, opts)
 vim.keymap.set('n', '<space>fF', function() t.extensions.file_browser.file_browser() end, opts)
 
 -- projects
-vim.keymap.set('n', '<space>fp', function() t.extensions.project.project{} end, opts)
+vim.keymap.set('n', '<space>fp', function() t.extensions.project.project() end, opts)
+
+
+-- alternate keybinds
+vim.keymap.set('n', '<space>,', function() t.extensions.file_browser.file_browser() end, opts)
+vim.keymap.set('n', '<space>.', function() builtin.find_files() end, opts)
+vim.keymap.set('n', '<space>/', function() t.extensions.project.project() end, opts)
