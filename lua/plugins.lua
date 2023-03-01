@@ -39,12 +39,19 @@ return require 'packer'.startup(function(use)
 
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
+    use 'lukas-reineke/lsp-format.nvim'
     ---------------------------===   Language  Specific   ===---------------------------
+    -- Rust cargo.toml
     use { 'Saecki/crates.nvim', config = [[require 'crates'.setup()]] }
 
-    use 'simrat39/rust-tools.nvim'
-
+    -- Debugging dependency for rust-tools
     use 'mfussenegger/nvim-dap'
+
+    -- Jumping to beginning/end of a Python block with %
+    use 'tmhedberg/matchit'
+
+    -- Python Indentation
+    use 'Vimjas/vim-python-pep8-indent'
 
     ---------------------------===        Utilities       ===---------------------------
     -- Move lines of code
@@ -54,7 +61,7 @@ return require 'packer'.startup(function(use)
     use { 'klen/nvim-test', config = [[require 'config.nvim_test']] }
 
     -- Commenting
-    use 'terrortylor/nvim-comment'
+    use { 'terrortylor/nvim-comment', config = [[require 'nvim_comment'.setup()]] }
 
     -- Running code
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim', config = [[require 'config.code_runner']] }

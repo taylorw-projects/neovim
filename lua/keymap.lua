@@ -20,7 +20,7 @@ vim.keymap.set('t', '<C-h>', function() vim.cmd.wincmd('h') end, opts) -- termin
 vim.keymap.set('t', '<C-j>', function() vim.cmd.wincmd('j') end, opts) -- terminal move down
 vim.keymap.set('t', '<C-k>', function() vim.cmd.wincmd('k') end, opts) -- terminal move up
 vim.keymap.set('t', '<C-l>', function() vim.cmd.wincmd('l') end, opts) -- terminal move right
-vim.keymap.set('t', '<C-c>', function() vim.cmd.wincmd('c') end, opts) -- terminal close current pane
+vim.keymap.set('t', '<C-q>', function() vim.cmd.wincmd('c') end, opts) -- terminal close current pane
 
 -- nonstandard functionality
 vim.keymap.set(
@@ -87,10 +87,3 @@ vim.keymap.set(
     end,
     opts
 ) -- open terminal in vertical split
-
----------------------------=== Editing (e) ===---------------------------
-vim.keymap.set('n', '<space>ew', function() vim.cmd('w') end, opts) -- save
-vim.keymap.set('n', '<space>eW', function() vim.cmd('wa') end, opts) -- save all
-vim.keymap.set('n', '<space>eq', function() vim.cmd('q') end, opts) -- quit
-vim.keymap.set('n', '<space>eQ', function() vim.cmd('qa') end, opts) -- quit all
-vim.keymap.set('n', '<space>ed', function() vim.cmd('bd') end, opts) -- buffer delete

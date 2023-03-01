@@ -2,6 +2,9 @@ local t = require 'telescope'
 local builtin = require 'telescope.builtin'
 
 t.setup {
+    defaults = {
+        file_ignore_patterns = { 'node_modules', 'venv' }
+    },
     extensions = {
         project = {
             hidden_files = false,
