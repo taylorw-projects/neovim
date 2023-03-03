@@ -3,13 +3,9 @@ local builtin = require 'telescope.builtin'
 
 t.setup {
     defaults = {
-        file_ignore_patterns = { 'node_modules', 'venv' }
+        file_ignore_patterns = { 'node_modules', '.venv' }
     },
     extensions = {
-        project = {
-            hidden_files = false,
-            sync_with_nvim_tree = true,
-        },
         file_browser = {
             hidden_files = false,
         },
@@ -18,7 +14,7 @@ t.setup {
 
 t.load_extension 'zoxide'
 t.load_extension 'file_browser'
-t.load_extension 'project'
+t.load_extension 'projects'
 
 local opts = { silent = true, noremap = true }
 
@@ -43,10 +39,10 @@ vim.keymap.set('n', '<space>fz', t.extensions.zoxide.list, opts)
 vim.keymap.set('n', '<space>fF', function() t.extensions.file_browser.file_browser() end, opts)
 
 -- projects
-vim.keymap.set('n', '<space>fp', function() t.extensions.project.project() end, opts)
+vim.keymap.set('n', '<space>fp', function() t.extensions.projects.projects() end, opts)
 
 
 -- alternate keybinds
 vim.keymap.set('n', '<space>,', function() t.extensions.file_browser.file_browser() end, opts)
 vim.keymap.set('n', '<space>.', function() builtin.find_files() end, opts)
-vim.keymap.set('n', '<space>/', function() t.extensions.project.project() end, opts)
+vim.keymap.set('n', '<space>/', function() t.extensions.projects.projects() end, opts)

@@ -181,3 +181,9 @@ lspconfig.yamlls.setup {
     flags = lsp_flags,
     capabilities = capabilities,
 }
+
+lspconfig.bashls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+    capabilities = capabilities,
+}

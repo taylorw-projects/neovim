@@ -54,6 +54,9 @@ return require 'packer'.startup(function(use)
     use 'Vimjas/vim-python-pep8-indent'
 
     ---------------------------===        Utilities       ===---------------------------
+    -- Org mode from Emacs (more or less)
+    use { 'nvim-orgmode/orgmode', config = [[require 'config.orgmode']] }
+
     -- Move lines of code
     use { 'fedepujol/move.nvim', config = [[require 'config.move']] }
 
@@ -87,6 +90,8 @@ return require 'packer'.startup(function(use)
     use 'nvim-telescope/telescope-file-browser.nvim'
 
     use 'nvim-telescope/telescope-project.nvim'
+
+    use { 'ahmedkhalf/project.nvim', config = [[require 'config.project_nvim']] }
 
     -- Zen Mode
     use { 'shortcuts/no-neck-pain.nvim', config = [[require 'config.no_neck_pain']] }
