@@ -13,6 +13,7 @@ vim.keymap.set('n', '<space>wr', function() vim.cmd.wincmd('r') end, opts) -- ro
 vim.keymap.set('n', '<space>wR', function() vim.cmd.wincmd('R') end, opts) -- rotate windows counterclockwise
 vim.keymap.set('n', '<space>wc', function() vim.cmd.wincmd('c') end, opts) -- close current pane
 vim.keymap.set('n', '<space>wo', function() vim.cmd.wincmd('o') end, opts) -- delete other panes
+vim.keymap.set('n', '<space>wp', function() vim.cmd.wincmd('p') end, opts) -- delete other panes
 vim.keymap.set('n', '<space>w=', function() vim.cmd.wincmd('=') end, opts) -- set panes to equal width
 
 -- Terminal
@@ -62,28 +63,3 @@ vim.keymap.set(
     end,
     opts
 ) -- open 4 panes
-vim.keymap.set(
-    'n',
-    '<space>wt',
-    function()
-        vim.cmd.wincmd('s')
-        vim.cmd.wincmd('j')
-        vim.cmd('ter')
-        vim.cmd.resize(20)
-        vim.cmd.setlocal('nonumber')
-        vim.cmd('startinsert')
-    end,
-    opts
-) -- open terminal in horizontal split
-vim.keymap.set(
-    'n',
-    '<space>wT',
-    function()
-        vim.cmd.wincmd('v')
-        vim.cmd.wincmd('l')
-        vim.cmd('ter')
-        vim.cmd.setlocal('nonumber')
-        vim.cmd('startinsert')
-    end,
-    opts
-) -- open terminal in vertical split

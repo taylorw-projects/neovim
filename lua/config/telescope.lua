@@ -1,20 +1,78 @@
 local t = require 'telescope'
 local builtin = require 'telescope.builtin'
+local fb_actions = require 'telescope._extensions.file_browser.actions'
 
 t.setup {
     defaults = {
-        file_ignore_patterns = { 'node_modules', '.venv' }
+        file_ignore_patterns = { 'node_modules', '.venv' },
+        borderchars = {
+            prompt = { '─', ' ', ' ', ' ', '─', '─', ' ', ' ' },
+            results = { ' ' },
+            preview = { ' ' },
+        },
+        theme = 'dropdown',
     },
     extensions = {
         file_browser = {
             hidden_files = false,
+            mappings = {
+                ['i'] = {
+                    ['<C-t>'] = fb_actions.goto_cwd,
+                    ['<C-w>'] = fb_actions.change_cwd,
+                },
+                ['n'] = {
+                    ['<C-t>'] = fb_actions.goto_cwd,
+                    ['<C-w>'] = fb_actions.change_cwd,
+                },
+            },
         },
     },
+    pickers = {
+        find_files            = {
+            theme = 'dropdown',
+        },
+        live_grep             = {
+            theme = 'dropdown',
+        },
+        buffers               = {
+            theme = 'dropdown',
+        },
+        help_tags             = {
+            theme = 'dropdown',
+        },
+        diagnostics           = {
+            theme = 'dropdown',
+        },
+        lsp_definitions       = {
+            theme = 'dropdown',
+        },
+        lsp_type_definitions  = {
+            theme = 'dropdown',
+        },
+        lsp_document_symbols  = {
+            theme = 'dropdown',
+        },
+        lsp_workspace_symbols = {
+            theme = 'dropdown',
+        },
+        lsp_implementations   = {
+            theme = 'dropdown',
+        },
+        lsp_references        = {
+            theme = 'dropdown',
+        },
+        git_status            = {
+            theme = 'dropdown'
+        },
+        file_browser          = {
+            theme = 'dropdown'
+        }
+    }
+
 }
 
 t.load_extension 'zoxide'
 t.load_extension 'file_browser'
-t.load_extension 'projects'
 
 local opts = { silent = true, noremap = true }
 
@@ -38,11 +96,6 @@ vim.keymap.set('n', '<space>fz', t.extensions.zoxide.list, opts)
 -- file browser
 vim.keymap.set('n', '<space>fF', function() t.extensions.file_browser.file_browser() end, opts)
 
--- projects
-vim.keymap.set('n', '<space>fp', function() t.extensions.projects.projects() end, opts)
-
-
 -- alternate keybinds
 vim.keymap.set('n', '<space>,', function() t.extensions.file_browser.file_browser() end, opts)
 vim.keymap.set('n', '<space>.', function() builtin.find_files() end, opts)
-vim.keymap.set('n', '<space>/', function() t.extensions.projects.projects() end, opts)

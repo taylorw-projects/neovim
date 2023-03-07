@@ -19,8 +19,6 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
     dashboard.button("f", "  Find file",
         "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>"),
-    dashboard.button("p", "  Find project",
-        "<cmd>lua require('telescope').extensions.projects.projects(require('telescope.themes').get_dropdown({}))<cr>"),
     dashboard.button("z", "  Find with zoxide",
         "<cmd>lua require('telescope').extensions.zoxide.list(require('telescope.themes').get_dropdown({}))<cr>"),
     dashboard.button("b", "  Find with File Browser",

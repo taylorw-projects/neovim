@@ -54,6 +54,12 @@ return require 'packer'.startup(function(use)
     use 'Vimjas/vim-python-pep8-indent'
 
     ---------------------------===        Utilities       ===---------------------------
+    -- Terminal improvements
+    use { 'akinsho/toggleterm.nvim', tag = '*', config = [[require 'config.toggleterm']] }
+
+    -- Code review diff helper
+    use 'AndrewRadev/diffurcate.vim'
+
     -- Org mode from Emacs (more or less)
     use { 'nvim-orgmode/orgmode', config = [[require 'config.orgmode']] }
 
@@ -89,10 +95,6 @@ return require 'packer'.startup(function(use)
 
     use 'nvim-telescope/telescope-file-browser.nvim'
 
-    use 'nvim-telescope/telescope-project.nvim'
-
-    use { 'ahmedkhalf/project.nvim', config = [[require 'config.project_nvim']] }
-
     -- Zen Mode
     use { 'shortcuts/no-neck-pain.nvim', config = [[require 'config.no_neck_pain']] }
 
@@ -122,5 +124,5 @@ return require 'packer'.startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', config = [[require 'config.treesitter']], run = ':TSUpdate' }
 
     ---------------------------===         Themes         ===---------------------------
-    use { 'folke/tokyonight.nvim', config = [[require 'config.tokyonight']] }
+    use { 'luisiacc/gruvbox-baby', config = [[require 'config.gruvbox_baby']] }
 end)
