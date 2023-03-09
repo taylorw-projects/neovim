@@ -14,7 +14,8 @@ t.setup {
     },
     extensions = {
         file_browser = {
-            hidden_files = false,
+            respect_gitignore = false,
+            hidden_files = true,
             mappings = {
                 ['i'] = {
                     ['<C-t>'] = fb_actions.goto_cwd,
@@ -25,6 +26,7 @@ t.setup {
                     ['<C-w>'] = fb_actions.change_cwd,
                 },
             },
+            theme = 'dropdown',
         },
     },
     pickers = {
@@ -64,11 +66,7 @@ t.setup {
         git_status            = {
             theme = 'dropdown'
         },
-        file_browser          = {
-            theme = 'dropdown'
-        }
-    }
-
+    },
 }
 
 t.load_extension 'zoxide'
@@ -77,7 +75,18 @@ t.load_extension 'file_browser'
 local opts = { silent = true, noremap = true }
 
 -- files
-vim.keymap.set('n', '<space>ff', function() builtin.find_files() end, opts)
+vim.keymap.set('n', '<space>ff', function()
+    builtin.find_files({
+        find_command = {
+            'fd',
+            '--type',
+            'f',
+            '--follow',
+            '--no-ignore-vcs',
+            '--color=never',
+        },
+    })
+end, opts)
 vim.keymap.set('n', '<space>fg', function() builtin.live_grep() end, opts)
 vim.keymap.set('n', '<space>fb', function() builtin.buffers() end, opts)
 vim.keymap.set('n', '<space>ft', function() builtin.treesitter() end, opts)

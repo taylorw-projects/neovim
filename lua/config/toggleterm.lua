@@ -1,12 +1,13 @@
 require 'toggleterm'.setup {
     size = function(term)
         if term.direction == 'horizontal' then
-            return 20
+            return 15
         elseif term.direction == 'vertical' then
         end
         return vim.o.columns * 0.333
     end,
     open_mapping = '<C-\\>',
+    shade_terminals = true,
 }
 
 local opts = { silent = true, remap = true }

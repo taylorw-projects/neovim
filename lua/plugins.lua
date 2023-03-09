@@ -40,6 +40,8 @@ return require 'packer'.startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
     use 'lukas-reineke/lsp-format.nvim'
+
+    use 'github/copilot.vim'
     ---------------------------===   Language  Specific   ===---------------------------
     -- Rust cargo.toml
     use { 'Saecki/crates.nvim', config = [[require 'crates'.setup()]] }
@@ -79,7 +81,7 @@ return require 'packer'.startup(function(use)
     use { 'mbbill/undotree', config = [[require 'config.undotree']] }
 
     -- Auto Pairs
-    use { 'jiangmiao/auto-pairs', config = [[require 'config.auto_pairs']] }
+    use { 'jiangmiao/auto-pairs', config = [[require 'config.autopairs']] }
 
     -- Snippet Support
     use 'L3MON4D3/LuaSnip'
@@ -124,5 +126,5 @@ return require 'packer'.startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', config = [[require 'config.treesitter']], run = ':TSUpdate' }
 
     ---------------------------===         Themes         ===---------------------------
-    use { 'luisiacc/gruvbox-baby', config = [[require 'config.gruvbox_baby']] }
+    use { 'Mofiqul/vscode.nvim', config = [[require 'config.theme']] }
 end)
