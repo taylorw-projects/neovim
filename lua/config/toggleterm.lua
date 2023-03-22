@@ -1,7 +1,7 @@
 require 'toggleterm'.setup {
     size = function(term)
         if term.direction == 'horizontal' then
-            return 15
+            return 20
         elseif term.direction == 'vertical' then
         end
         return vim.o.columns * 0.333

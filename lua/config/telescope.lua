@@ -4,7 +4,7 @@ local fb_actions = require 'telescope._extensions.file_browser.actions'
 
 t.setup {
     defaults = {
-        file_ignore_patterns = { 'node_modules', '.venv' },
+        file_ignore_patterns = { 'node_modules', '.venv', '__pycache__' },
         borderchars = {
             prompt = { '─', ' ', ' ', ' ', '─', '─', ' ', ' ' },
             results = { ' ' },
