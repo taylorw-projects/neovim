@@ -26,7 +26,7 @@ local opts = { silent = true, remap = true }
 
 -- file marking keymaps
 vim.keymap.set('n', '<space>ha', function() require 'harpoon.mark'.add_file() end, opts)
-vim.keymap.set('n', '<space>hm', function() ui.toggle_quick_menu() end, opts)
+vim.keymap.set('n', '<space>hh', function() ui.toggle_quick_menu() end, opts)
 vim.keymap.set('n', '<space>hn', function() ui.nav_next() end, opts)
 vim.keymap.set('n', '<space>hp', function() ui.nav_prev() end, opts)
 vim.keymap.set('n', '<space>h0', function() ui.nav_file(0) end, opts)
@@ -41,7 +41,7 @@ vim.keymap.set('n', '<space>h8', function() ui.nav_file(8) end, opts)
 vim.keymap.set('n', '<space>h9', function() ui.nav_file(9) end, opts)
 
 -- terminal marking keymaps
-vim.keymap.set('n', '<space>htm', function() require 'harpoon.cmd-ui'.toggle_quick_menu() end, opts)
+vim.keymap.set('n', '<space>htt', function() require 'harpoon.cmd-ui'.toggle_quick_menu() end, opts)
 vim.keymap.set('n', '<space>htc', function() term.clear_all() end, opts)
 vim.keymap.set('n', '<space>ht0', function() term.gotoTerminal(0) end, opts)
 vim.keymap.set('n', '<space>ht1', function() term.gotoTerminal(1) end, opts)
