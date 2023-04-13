@@ -7,7 +7,7 @@ require 'toggleterm'.setup {
         return vim.o.columns * 0.333
     end,
     open_mapping = '<C-\\>',
-    shade_terminals = true,
+    shade_terminals = false,
 }
 
 local opts = { silent = true, remap = true }

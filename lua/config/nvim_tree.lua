@@ -7,6 +7,7 @@ nvim_tree.setup {
 
 }
 
+
 vim.keymap.set('n', '<space>nt', function() vim.cmd('NvimTreeToggle') end, opts)
 vim.keymap.set('n', '<space>no', function() vim.cmd('NvimTreeFocus') end, opts)
 vim.keymap.set('n', '<space>nf', function() vim.cmd('NvimTreeFindFile') end, opts)

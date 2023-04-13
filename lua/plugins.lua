@@ -56,6 +56,9 @@ return require 'packer'.startup(function(use)
     use 'Vimjas/vim-python-pep8-indent'
 
     ---------------------------===        Utilities       ===---------------------------
+    -- Barbar Tabline
+    use { 'romgrk/barbar.nvim', config = [[require 'config.barbar']] }
+
     -- Terminal improvements
     use { 'akinsho/toggleterm.nvim', tag = '*', config = [[require 'config.toggleterm']] }
 

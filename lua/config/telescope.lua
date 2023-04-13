@@ -98,7 +98,7 @@ vim.keymap.set('n', '<space>fS', function() builtin.git_stash() end, opts)
 vim.keymap.set('n', '<space>fz', t.extensions.zoxide.list, opts)
 
 -- file browser
-vim.keymap.set('n', '<space>fF', function() t.extensions.file_browser.file_browser() end, opts)
+vim.keymap.set('n', '<space>fe', function() t.extensions.file_browser.file_browser() end, opts)
 
 -- alternate keybinds
 vim.keymap.set('n', '<space>,', function() t.extensions.file_browser.file_browser() end, opts)

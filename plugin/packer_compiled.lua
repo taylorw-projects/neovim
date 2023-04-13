@@ -91,6 +91,12 @@ _G.packer_plugins = {
     path = "/Users/taylorw/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  ["barbar.nvim"] = {
+    config = { "require 'config.barbar'" },
+    loaded = true,
+    path = "/Users/taylorw/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/taylorw/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -307,34 +313,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require 'config.toggleterm'
-time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-test
-time([[Config for nvim-test]], true)
-require 'config.nvim_test'
-time([[Config for nvim-test]], false)
--- Config for: undotree
-time([[Config for undotree]], true)
-require 'config.undotree'
-time([[Config for undotree]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require 'config.nvim_tree'
 time([[Config for nvim-tree.lua]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require 'config.lualine'
-time([[Config for lualine.nvim]], false)
--- Config for: orgmode
-time([[Config for orgmode]], true)
-require 'config.orgmode'
-time([[Config for orgmode]], false)
--- Config for: code_runner.nvim
-time([[Config for code_runner.nvim]], true)
-require 'config.code_runner'
-time([[Config for code_runner.nvim]], false)
 -- Config for: move.nvim
 time([[Config for move.nvim]], true)
 require 'config.move'
@@ -343,50 +325,78 @@ time([[Config for move.nvim]], false)
 time([[Config for no-neck-pain.nvim]], true)
 require 'config.no_neck_pain'
 time([[Config for no-neck-pain.nvim]], false)
--- Config for: crates.nvim
-time([[Config for crates.nvim]], true)
-require 'crates'.setup()
-time([[Config for crates.nvim]], false)
+-- Config for: orgmode
+time([[Config for orgmode]], true)
+require 'config.orgmode'
+time([[Config for orgmode]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require 'config.cmp'
 time([[Config for nvim-cmp]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-require 'config.alpha'
-time([[Config for alpha-nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require 'config.treesitter'
-time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-comment
 time([[Config for nvim-comment]], true)
 require 'nvim_comment'.setup()
 time([[Config for nvim-comment]], false)
--- Config for: auto-pairs
-time([[Config for auto-pairs]], true)
-require 'config.autopairs'
-time([[Config for auto-pairs]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 require 'config.gitsigns'
 time([[Config for gitsigns.nvim]], false)
--- Config for: vscode.nvim
-time([[Config for vscode.nvim]], true)
-require 'config.theme'
-time([[Config for vscode.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require 'config.telescope'
-time([[Config for telescope.nvim]], false)
 -- Config for: harpoon
 time([[Config for harpoon]], true)
 require 'config.harpoon'
 time([[Config for harpoon]], false)
+-- Config for: code_runner.nvim
+time([[Config for code_runner.nvim]], true)
+require 'config.code_runner'
+time([[Config for code_runner.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require 'config.treesitter'
+time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 require 'config.lspconfig'
 time([[Config for nvim-lspconfig]], false)
+-- Config for: barbar.nvim
+time([[Config for barbar.nvim]], true)
+require 'config.barbar'
+time([[Config for barbar.nvim]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+require 'config.alpha'
+time([[Config for alpha-nvim]], false)
+-- Config for: crates.nvim
+time([[Config for crates.nvim]], true)
+require 'crates'.setup()
+time([[Config for crates.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require 'config.telescope'
+time([[Config for telescope.nvim]], false)
+-- Config for: auto-pairs
+time([[Config for auto-pairs]], true)
+require 'config.autopairs'
+time([[Config for auto-pairs]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require 'config.lualine'
+time([[Config for lualine.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require 'config.toggleterm'
+time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-test
+time([[Config for nvim-test]], true)
+require 'config.nvim_test'
+time([[Config for nvim-test]], false)
+-- Config for: vscode.nvim
+time([[Config for vscode.nvim]], true)
+require 'config.theme'
+time([[Config for vscode.nvim]], false)
+-- Config for: undotree
+time([[Config for undotree]], true)
+require 'config.undotree'
+time([[Config for undotree]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
