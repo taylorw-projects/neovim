@@ -5,7 +5,7 @@ local fb_actions = require 'telescope._extensions.file_browser.actions'
 t.setup {
     defaults = {
         file_ignore_patterns = { 'node_modules', '.venv', '__pycache__' },
-        -- theme = 'dropdown',
+        theme = 'dropdown',
     },
     extensions = {
         file_browser = {
@@ -21,47 +21,47 @@ t.setup {
                     ['<C-w>'] = fb_actions.change_cwd,
                 },
             },
-            -- theme = 'dropdown',
+            theme = 'dropdown',
         },
     },
-    -- pickers = {
-    --     find_files            = {
-    --         theme = 'dropdown',
-    --     },
-    --     live_grep             = {
-    --         theme = 'dropdown',
-    --     },
-    --     buffers               = {
-    --         theme = 'dropdown',
-    --     },
-    --     help_tags             = {
-    --         theme = 'dropdown',
-    --     },
-    --     diagnostics           = {
-    --         theme = 'dropdown',
-    --     },
-    --     lsp_definitions       = {
-    --         theme = 'dropdown',
-    --     },
-    --     lsp_type_definitions  = {
-    --         theme = 'dropdown',
-    --     },
-    --     lsp_document_symbols  = {
-    --         theme = 'dropdown',
-    --     },
-    --     lsp_workspace_symbols = {
-    --         theme = 'dropdown',
-    --     },
-    --     lsp_implementations   = {
-    --         theme = 'dropdown',
-    --     },
-    --     lsp_references        = {
-    --         theme = 'dropdown',
-    --     },
-    --     git_status            = {
-    --         theme = 'dropdown'
-    --     },
-    -- },
+    pickers = {
+        find_files            = {
+            theme = 'dropdown',
+        },
+        live_grep             = {
+            theme = 'dropdown',
+        },
+        buffers               = {
+            theme = 'dropdown',
+        },
+        help_tags             = {
+            theme = 'dropdown',
+        },
+        diagnostics           = {
+            theme = 'dropdown',
+        },
+        lsp_definitions       = {
+            theme = 'dropdown',
+        },
+        lsp_type_definitions  = {
+            theme = 'dropdown',
+        },
+        lsp_document_symbols  = {
+            theme = 'dropdown',
+        },
+        lsp_workspace_symbols = {
+            theme = 'dropdown',
+        },
+        lsp_implementations   = {
+            theme = 'dropdown',
+        },
+        lsp_references        = {
+            theme = 'dropdown',
+        },
+        git_status            = {
+            theme = 'dropdown'
+        },
+    },
 }
 
 t.load_extension 'zoxide'
