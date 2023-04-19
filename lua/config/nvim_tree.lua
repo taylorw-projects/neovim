@@ -1,11 +1,22 @@
-local nvim_tree = require 'nvim-tree'
-local opts = { silent = true, remap = true }
+local function custom_on_attach(bufnr)
+    local api = require 'nvim-tree.api'
 
-nvim_tree.setup {
-	sync_root_with_cwd = true,
-	respect_buf_cwd = true,
+    local function opts(desc)
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    api.config.mappings.default_on_attach(bufnr)
+
+    vim.keymap.set('n', '+', api.tree.change_root_to_node, opts('CD'))
+end
+
+require 'nvim-tree'.setup {
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    on_attach = custom_on_attach
 }
 
+local opts = { silent = true, noremap = true }
 
 vim.keymap.set('n', '<space>nt', function() vim.cmd('NvimTreeToggle') end, opts)
 vim.keymap.set('n', '<space>nf', function() vim.cmd('NvimTreeFocus') end, opts)
