@@ -1,11 +1,18 @@
 local t = require 'telescope'
+local actions = require 'telescope.actions'
+local trouble = require 'trouble.providers.telescope'
 local builtin = require 'telescope.builtin'
 local fb_actions = require 'telescope._extensions.file_browser.actions'
+
 
 t.setup {
     defaults = {
         file_ignore_patterns = { 'node_modules', '.venv', '__pycache__' },
         theme = 'dropdown',
+        mappings = {
+            i = { ["<c-t>"] = trouble.open_with_trouble },
+            n = { ["<c-t>"] = trouble.open_with_trouble },
+        },
     },
     extensions = {
         file_browser = {
@@ -25,40 +32,55 @@ t.setup {
         },
     },
     pickers = {
-        find_files            = {
+        find_files                    = {
             theme = 'dropdown',
         },
-        live_grep             = {
+        live_grep                     = {
             theme = 'dropdown',
         },
-        buffers               = {
+        buffers                       = {
             theme = 'dropdown',
         },
-        help_tags             = {
+        help_tags                     = {
             theme = 'dropdown',
         },
-        diagnostics           = {
+        diagnostics                   = {
             theme = 'dropdown',
         },
-        lsp_definitions       = {
+        treesitter                    = {
             theme = 'dropdown',
         },
-        lsp_type_definitions  = {
+        oldfiles                      = {
             theme = 'dropdown',
         },
-        lsp_document_symbols  = {
+        current_buffer_fuzzy_find     = {
             theme = 'dropdown',
         },
-        lsp_workspace_symbols = {
+        lsp_definitions               = {
             theme = 'dropdown',
         },
-        lsp_implementations   = {
+        lsp_type_definitions          = {
             theme = 'dropdown',
         },
-        lsp_references        = {
+        lsp_document_symbols          = {
             theme = 'dropdown',
         },
-        git_status            = {
+        lsp_workspace_symbols         = {
+            theme = 'dropdown',
+        },
+        lsp_dynamic_workspace_symbols = {
+            theme = 'dropdown',
+        },
+        lsp_implementations           = {
+            theme = 'dropdown',
+        },
+        lsp_references                = {
+            theme = 'dropdown',
+        },
+        git_status                    = {
+            theme = 'dropdown'
+        },
+        git_branches                  = {
             theme = 'dropdown'
         },
     },
@@ -82,24 +104,29 @@ vim.keymap.set('n', '<space>ff', function()
         },
     })
 end, opts)
-vim.keymap.set('n', '<space>fg', function() builtin.live_grep() end, opts)
-vim.keymap.set('n', '<space>fb', function() builtin.buffers() end, opts)
-vim.keymap.set('n', '<space>ft', function() builtin.treesitter() end, opts)
+vim.keymap.set('n', '<space>fg', builtin.live_grep, opts)
+vim.keymap.set('n', '<space>fb', builtin.buffers, opts)
+vim.keymap.set('n', '<space>ft', builtin.treesitter, opts)
+vim.keymap.set('n', '<space>fo', builtin.oldfiles, opts)
+vim.keymap.set('n', '<space>fi', builtin.current_buffer_fuzzy_find, opts)
+
 
 -- git pickers
-vim.keymap.set('n', '<space>fG', function() builtin.git_files() end, opts)
-vim.keymap.set('n', '<space>fc', function() builtin.git_commits() end, opts)
-vim.keymap.set('n', '<space>fB', function() builtin.git_branches() end, opts)
-vim.keymap.set('n', '<space>fd', function() builtin.git_branches() end, opts)
-vim.keymap.set('n', '<space>fs', function() builtin.git_status() end, opts)
-vim.keymap.set('n', '<space>fS', function() builtin.git_stash() end, opts)
+vim.keymap.set('n', '<space>fF', builtin.git_files, opts)
+vim.keymap.set('n', '<space>fC', builtin.git_commits, opts)
+vim.keymap.set('n', '<space>fB', builtin.git_branches, opts)
+vim.keymap.set('n', '<space>fS', builtin.git_status, opts)
+vim.keymap.set('n', '<space>fT', builtin.git_stash, opts)
+
+-- LSP
+vim.keymap.set('n', '<space>fd', builtin.diagnostics, opts)
 
 -- zoxide
-vim.keymap.set('n', '<space>fz', t.extensions.zoxide.list, opts)
+vim.keymap.set('n', '<space>fz', function() t.extensions.zoxide.list(require 'telescope.themes'.get_dropdown()) end, opts)
 
 -- file browser
-vim.keymap.set('n', '<space>fe', function() t.extensions.file_browser.file_browser() end, opts)
+vim.keymap.set('n', '<space>fe', t.extensions.file_browser.file_browser, opts)
 
 -- alternate keybinds
-vim.keymap.set('n', '<space>,', function() t.extensions.file_browser.file_browser() end, opts)
-vim.keymap.set('n', '<space>.', function() builtin.find_files() end, opts)
+vim.keymap.set('n', '<space>,', t.extensions.file_browser.file_browser, opts)
+vim.keymap.set('n', '<space>.', builtin.find_files, opts)

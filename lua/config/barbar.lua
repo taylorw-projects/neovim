@@ -3,6 +3,9 @@ require 'barbar'.setup {
     sidebar_filetypes = {
         NvimTree = true,
         undotree = { text = 'undotree' },
+    },
+    icons = {
+        buffer_index = true,
     }
 }
 

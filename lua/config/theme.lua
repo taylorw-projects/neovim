@@ -1,2 +1,12 @@
 vim.opt.background = 'dark'
-vim.cmd.colorscheme 'vscode'
+require 'catppuccin'.setup {
+    integrations = {
+        barbar = false,
+        cmp = true,
+        treesitter = true,
+        nvimtree = true,
+        telescope = true,
+    }
+}
+
+vim.cmd.colorscheme 'catppuccin-frappe'

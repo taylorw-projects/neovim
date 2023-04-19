@@ -7,13 +7,25 @@ end
 local dashboard = require "alpha.themes.dashboard"
 
 dashboard.section.header.val = {
-    [[          .:'    ]],
-    [[      __ :'__    ]],
-    [[   .'`__`-'__``. ]],
-    [[  :__________.-' ]],
-    [[  :_________:    ]],
-    [[   :_________`-; ]],
-    [[    `.__.-.__.'  ]],
+    [[                    .                    ]],
+    [[    ##############..... ##############   ]],
+    [[    ##############......##############   ]],
+    [[      ##########..........##########     ]],
+    [[      ##########........##########       ]],
+    [[      ##########.......##########        ]],
+    [[      ##########.....##########..        ]],
+    [[      ##########....##########.....      ]],
+    [[    ..##########..##########.........    ]],
+    [[  ....##########.#########.............  ]],
+    [[    ..################JJJ............    ]],
+    [[      ################.............      ]],
+    [[      ##############.JJJ.JJJJJJJJJJ      ]],
+    [[      ############...JJ...JJ..JJ  JJ     ]],
+    [[      ##########....JJ...JJ..JJ  JJ      ]],
+    [[      ########......JJJ..JJJ JJJ JJJ     ]],
+    [[      ######    .........                ]],
+    [[                  .....                  ]],
+    [[                    .                    ]],
 }
 
 dashboard.section.buttons.val = {
@@ -24,8 +36,8 @@ dashboard.section.buttons.val = {
     dashboard.button("e", "  Find with File Explorer",
         "<cmd>lua require('telescope').extensions.file_browser.file_browser(require('telescope.themes').get_dropdown({}))<cr>"),
     dashboard.button("g", "  Find with Grep", ":Telescope live_grep <CR>"),
-    dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-    dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("o", "  Find Old Files", ":Telescope oldfiles <CR>"),
+    dashboard.button("n", "  Create New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("c", "  Configuration", ":e $MYVIMRC<CR>"),
     dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }

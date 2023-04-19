@@ -1,3 +1,4 @@
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.tabstop = 4
@@ -10,4 +11,5 @@ vim.opt.wrap = false
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevel = 99
+vim.opt.termguicolors = true
 vim.opt.termguicolors = true

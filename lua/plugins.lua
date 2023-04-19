@@ -41,7 +41,6 @@ return require 'packer'.startup(function(use)
 
     use 'lukas-reineke/lsp-format.nvim'
 
-    use 'github/copilot.vim'
     ---------------------------===   Language  Specific   ===---------------------------
     -- Rust cargo.toml
     use { 'Saecki/crates.nvim', config = [[require 'crates'.setup()]] }
@@ -56,6 +55,12 @@ return require 'packer'.startup(function(use)
     use 'Vimjas/vim-python-pep8-indent'
 
     ---------------------------===        Utilities       ===---------------------------
+    -- LSP diagnostics handler
+    use { 'folke/trouble.nvim', config = [[require 'config.trouble']] }
+
+    -- Todo Highlighting
+    use { 'folke/todo-comments.nvim', config = [[require 'config.todo_comments']] }
+
     -- Barbar Tabline
     use { 'romgrk/barbar.nvim', config = [[require 'config.barbar']] }
 
@@ -70,9 +75,6 @@ return require 'packer'.startup(function(use)
 
     -- Move lines of code
     use { 'fedepujol/move.nvim', config = [[require 'config.move']] }
-
-    -- Running tests
-    use { 'klen/nvim-test', config = [[require 'config.nvim_test']] }
 
     -- Commenting
     use { 'terrortylor/nvim-comment', config = [[require 'nvim_comment'.setup()]] }
@@ -129,5 +131,5 @@ return require 'packer'.startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', config = [[require 'config.treesitter']], run = ':TSUpdate' }
 
     ---------------------------===         Themes         ===---------------------------
-    use { 'Mofiqul/vscode.nvim', config = [[require 'config.theme']] }
+    use { 'catppuccin/nvim', config = [[require 'config.theme']] }
 end)
