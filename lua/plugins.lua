@@ -70,9 +70,6 @@ return require 'packer'.startup(function(use)
     -- Code review diff helper
     use 'AndrewRadev/diffurcate.vim'
 
-    -- Org mode from Emacs (more or less)
-    use { 'nvim-orgmode/orgmode', config = [[require 'config.orgmode']] }
-
     -- Move lines of code
     use { 'fedepujol/move.nvim', config = [[require 'config.move']] }
 

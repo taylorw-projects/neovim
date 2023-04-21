@@ -240,12 +240,6 @@ _G.packer_plugins = {
     path = "/Users/taylorw/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
-  orgmode = {
-    config = { "require 'config.orgmode'" },
-    loaded = true,
-    path = "/Users/taylorw/.local/share/nvim/site/pack/packer/start/orgmode",
-    url = "https://github.com/nvim-orgmode/orgmode"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/taylorw/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -314,26 +308,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require 'config.nvim_tree'
-time([[Config for nvim-tree.lua]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require 'config.telescope'
-time([[Config for telescope.nvim]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 require 'config.todo_comments'
 time([[Config for todo-comments.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require 'config.nvim_tree'
+time([[Config for nvim-tree.lua]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require 'config.trouble'
+time([[Config for trouble.nvim]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require 'config.lualine'
 time([[Config for lualine.nvim]], false)
--- Config for: orgmode
-time([[Config for orgmode]], true)
-require 'config.orgmode'
-time([[Config for orgmode]], false)
+-- Config for: undotree
+time([[Config for undotree]], true)
+require 'config.undotree'
+time([[Config for undotree]], false)
 -- Config for: move.nvim
 time([[Config for move.nvim]], true)
 require 'config.move'
@@ -342,10 +336,14 @@ time([[Config for move.nvim]], false)
 time([[Config for code_runner.nvim]], true)
 require 'config.code_runner'
 time([[Config for code_runner.nvim]], false)
--- Config for: undotree
-time([[Config for undotree]], true)
-require 'config.undotree'
-time([[Config for undotree]], false)
+-- Config for: no-neck-pain.nvim
+time([[Config for no-neck-pain.nvim]], true)
+require 'config.no_neck_pain'
+time([[Config for no-neck-pain.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require 'config.treesitter'
+time([[Config for nvim-treesitter]], false)
 -- Config for: crates.nvim
 time([[Config for crates.nvim]], true)
 require 'crates'.setup()
@@ -358,6 +356,10 @@ time([[Config for nvim]], false)
 time([[Config for alpha-nvim]], true)
 require 'config.alpha'
 time([[Config for alpha-nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require 'config.lspconfig'
+time([[Config for nvim-lspconfig]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require 'config.cmp'
@@ -382,26 +384,14 @@ time([[Config for barbar.nvim]], false)
 time([[Config for harpoon]], true)
 require 'config.harpoon'
 time([[Config for harpoon]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require 'config.telescope'
+time([[Config for telescope.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 require 'config.toggleterm'
 time([[Config for toggleterm.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require 'config.treesitter'
-time([[Config for nvim-treesitter]], false)
--- Config for: no-neck-pain.nvim
-time([[Config for no-neck-pain.nvim]], true)
-require 'config.no_neck_pain'
-time([[Config for no-neck-pain.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require 'config.lspconfig'
-time([[Config for nvim-lspconfig]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require 'config.trouble'
-time([[Config for trouble.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
