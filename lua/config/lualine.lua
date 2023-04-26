@@ -2,12 +2,9 @@ require 'lualine'.setup {
     options = {
         icons_enabled = true,
         theme = 'catppuccin',
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
-        disabled_filetypes = {
-            statusline = {},
-            winbar = {},
-        },
+        component_separators = '|',
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = { 'packer', 'NvimTree' },
         ignore_focus = {},
         always_divide_middle = true,
         globalstatus = false,

@@ -55,29 +55,18 @@ return require 'packer'.startup(function(use)
     use 'Vimjas/vim-python-pep8-indent'
 
     ---------------------------===        Utilities       ===---------------------------
-    -- LSP diagnostics handler
-    use { 'folke/trouble.nvim', config = [[require 'config.trouble']] }
 
-    -- Todo Highlighting
-    use { 'folke/todo-comments.nvim', config = [[require 'config.todo_comments']] }
-
-    -- Barbar Tabline
-    use { 'romgrk/barbar.nvim', config = [[require 'config.barbar']] }
+    -- Neovim - Tmux integration
+    use { 'alexghergh/nvim-tmux-navigation', config = [[require 'config.tmux']] }
 
     -- Terminal improvements
     use { 'akinsho/toggleterm.nvim', tag = '*', config = [[require 'config.toggleterm']] }
-
-    -- Code review diff helper
-    use 'AndrewRadev/diffurcate.vim'
 
     -- Move lines of code
     use { 'fedepujol/move.nvim', config = [[require 'config.move']] }
 
     -- Commenting
     use { 'terrortylor/nvim-comment', config = [[require 'nvim_comment'.setup()]] }
-
-    -- Running code
-    use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim', config = [[require 'config.code_runner']] }
 
     -- Better undoing
     use { 'mbbill/undotree', config = [[require 'config.undotree']] }
@@ -112,6 +101,9 @@ return require 'packer'.startup(function(use)
     use 'tpope/vim-fugitive'
 
     ---------------------------===    Editor Formatting   ===---------------------------
+    -- Todo Highlighting
+    use { 'folke/todo-comments.nvim', config = [[require 'config.todo_comments']] }
+
     -- Start Menu
     use { 'goolord/alpha-nvim', config = [[require 'config.alpha']] }
 

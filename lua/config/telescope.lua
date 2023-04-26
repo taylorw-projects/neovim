@@ -1,6 +1,5 @@
 local t = require 'telescope'
 local actions = require 'telescope.actions'
-local trouble = require 'trouble.providers.telescope'
 local builtin = require 'telescope.builtin'
 local fb_actions = require 'telescope._extensions.file_browser.actions'
 
@@ -9,10 +8,6 @@ t.setup {
     defaults = {
         file_ignore_patterns = { 'node_modules', '.venv', '__pycache__' },
         theme = 'dropdown',
-        mappings = {
-            i = { ["<c-t>"] = trouble.open_with_trouble },
-            n = { ["<c-t>"] = trouble.open_with_trouble },
-        },
     },
     extensions = {
         file_browser = {
@@ -85,6 +80,26 @@ t.setup {
         },
     },
 }
+
+local colors = require 'catppuccin.palettes'.get_palette 'frappe'
+local TelescopeColor = {
+    TelescopeMatching = { fg = colors.flamingo },
+    TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
+    TelescopePromptPrefix = { bg = colors.surface0 },
+    TelescopePromptNormal = { bg = colors.surface0 },
+    TelescopeResultsNormal = { bg = colors.mantle },
+    TelescopePreviewNormal = { bg = colors.mantle },
+    TelescopePromptBorder = { bg = colors.surface0, fg = colors.surface0 },
+    TelescopeResultsBorder = { bg = colors.mantle, fg = colors.mantle },
+    TelescopePreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+    TelescopePromptTitle = { bg = colors.pink, fg = colors.mantle },
+    TelescopeResultsTitle = { fg = colors.mantle },
+    TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
+}
+
+for hl, col in pairs(TelescopeColor) do
+    vim.api.nvim_set_hl(0, hl, col)
+end
 
 t.load_extension 'zoxide'
 t.load_extension 'file_browser'
