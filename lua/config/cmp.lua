@@ -6,10 +6,6 @@ cmp.setup {
             require('luasnip').lsp_expand(args.body)
         end,
     },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
     mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -21,14 +17,12 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        -- { name = 'buffer' },
-        -- { name = 'orgmode' },
+        { name = 'nvim_lsp_signature_help' }
     }
 }
 
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources {
         { name = 'cmp_git' },
-        -- { name = 'buffer' },
     }
 })

@@ -8,6 +8,8 @@ local function custom_on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     vim.keymap.set('n', '+', api.tree.change_root_to_node, opts('CD'))
+    vim.keymap.set('n', 'c', api.fs.create, opts('Create'))
+    vim.keymap.set('n', '<C-y>', api.fs.copy.node, opts('Yank Node'))
 end
 
 require 'nvim-tree'.setup {

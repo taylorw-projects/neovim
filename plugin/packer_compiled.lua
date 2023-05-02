@@ -291,10 +291,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: move.nvim
+time([[Config for move.nvim]], true)
+require 'config.move'
+time([[Config for move.nvim]], false)
+-- Config for: no-neck-pain.nvim
+time([[Config for no-neck-pain.nvim]], true)
+require 'config.no_neck_pain'
+time([[Config for no-neck-pain.nvim]], false)
+-- Config for: nvim
+time([[Config for nvim]], true)
+require 'config.theme'
+time([[Config for nvim]], false)
 -- Config for: crates.nvim
 time([[Config for crates.nvim]], true)
 require 'crates'.setup()
 time([[Config for crates.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require 'config.cmp'
+time([[Config for nvim-cmp]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require 'config.treesitter'
@@ -307,10 +323,10 @@ time([[Config for gitsigns.nvim]], false)
 time([[Config for nvim-comment]], true)
 require 'nvim_comment'.setup()
 time([[Config for nvim-comment]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require 'config.telescope'
-time([[Config for telescope.nvim]], false)
+-- Config for: harpoon
+time([[Config for harpoon]], true)
+require 'config.harpoon'
+time([[Config for harpoon]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require 'config.alpha'
@@ -347,26 +363,10 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for lualine.nvim]], true)
 require 'config.lualine'
 time([[Config for lualine.nvim]], false)
--- Config for: move.nvim
-time([[Config for move.nvim]], true)
-require 'config.move'
-time([[Config for move.nvim]], false)
--- Config for: no-neck-pain.nvim
-time([[Config for no-neck-pain.nvim]], true)
-require 'config.no_neck_pain'
-time([[Config for no-neck-pain.nvim]], false)
--- Config for: harpoon
-time([[Config for harpoon]], true)
-require 'config.harpoon'
-time([[Config for harpoon]], false)
--- Config for: nvim
-time([[Config for nvim]], true)
-require 'config.theme'
-time([[Config for nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require 'config.cmp'
-time([[Config for nvim-cmp]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require 'config.telescope'
+time([[Config for telescope.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

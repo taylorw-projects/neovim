@@ -81,7 +81,7 @@ t.setup {
     },
 }
 
-local colors = require 'catppuccin.palettes'.get_palette 'frappe'
+local colors = require 'catppuccin.palettes'.get_palette 'mocha'
 local TelescopeColor = {
     TelescopeMatching = { fg = colors.flamingo },
     TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
