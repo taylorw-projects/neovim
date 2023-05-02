@@ -17,10 +17,6 @@ vim.keymap.set('n', '<space>wp', function() vim.cmd.wincmd('p') end, opts) -- de
 vim.keymap.set('n', '<space>w=', function() vim.cmd.wincmd('=') end, opts) -- set panes to equal width
 
 -- Terminal
-vim.keymap.set('t', '<C-h>', function() vim.cmd.wincmd('h') end, opts) -- terminal move left
-vim.keymap.set('t', '<C-j>', function() vim.cmd.wincmd('j') end, opts) -- terminal move down
-vim.keymap.set('t', '<C-k>', function() vim.cmd.wincmd('k') end, opts) -- terminal move up
-vim.keymap.set('t', '<C-l>', function() vim.cmd.wincmd('l') end, opts) -- terminal move right
 vim.keymap.set('t', '<C-q>', function() vim.cmd.wincmd('c') end, opts) -- terminal close current pane
 
 -- nonstandard functionality
